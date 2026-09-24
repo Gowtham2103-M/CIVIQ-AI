@@ -1,0 +1,563 @@
+/* ============================================================
+   AI CIVICGUARD - OFFICER DEPARTMENTS
+   FIELD WORKER THEME (BLUE SILK SHADER + OBSIDIAN GLASS)
+============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+.departments-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #0A0C14;
+  color: #FFFFFF;
+  padding-bottom: 60px;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   SILK ANIMATED BACKGROUND LAYER
+============================================================ */
+
+.silk-background-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.departments-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  min-height: 82px;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: rgba(10, 12, 20, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.departments-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.back-button {
+  width: auto !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #2563EB !important;
+  cursor: pointer !important;
+  padding: 6px !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.back-button:hover {
+  background: transparent !important;
+  color: #00D2FF !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: translateX(-3px) !important;
+}
+
+.department-page-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #FFFFFF;
+}
+
+.department-page-title svg {
+  color: #2563EB;
+}
+
+.department-page-title h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #FFFFFF;
+}
+
+.departments-header p {
+  margin: 4px 0 0;
+  color: #94A3B8;
+  font-size: 13px;
+}
+
+.refresh-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.4);
+  transition: all 0.25s ease;
+}
+
+.refresh-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+}
+
+.refresh-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================================
+   SEARCH & TOOLBAR
+============================================================ */
+
+.departments-toolbar {
+  max-width: 1500px;
+  margin: 26px auto 0;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.search-box {
+  height: 46px;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  background: rgba(10, 12, 20, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.search-box:focus-within {
+  border-color: #2563EB;
+  box-shadow: 0 0 18px rgba(37, 99, 235, 0.35);
+  background: rgba(10, 12, 20, 0.9);
+}
+
+.search-box svg {
+  color: #2563EB;
+  flex-shrink: 0;
+}
+
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #FFFFFF !important;
+  font-size: 13px;
+}
+
+.search-box input::placeholder {
+  color: #64748B;
+}
+
+/* ============================================================
+   STATISTICS OVERVIEW CARDS (.department-summary & .summary-card)
+============================================================ */
+
+.department-summary,
+.departments-stats-summary {
+  max-width: 1500px;
+  margin: 24px auto 0;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 1200px) {
+  .department-summary,
+  .departments-stats-summary {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .department-summary,
+  .departments-stats-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.summary-card,
+.stat-summary-card {
+  background: rgba(10, 12, 20, 0.75) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 18px !important;
+  padding: 20px 22px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.25s ease !important;
+}
+
+.summary-card:hover,
+.stat-summary-card:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(37, 99, 235, 0.4) !important;
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.25) !important;
+}
+
+.summary-card svg,
+.stat-summary-icon {
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  padding: 9px !important;
+  border-radius: 12px !important;
+  background: rgba(37, 99, 235, 0.15) !important;
+  border: 1px solid rgba(37, 99, 235, 0.3) !important;
+  color: #2563EB !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.summary-card.critical svg {
+  background: rgba(239, 68, 68, 0.15) !important;
+  border-color: rgba(239, 68, 68, 0.3) !important;
+  color: #F87171 !important;
+}
+
+.summary-card.high svg {
+  background: rgba(245, 158, 11, 0.15) !important;
+  border-color: rgba(245, 158, 11, 0.3) !important;
+  color: #FBBF24 !important;
+}
+
+.summary-card.pending svg {
+  background: rgba(0, 210, 255, 0.15) !important;
+  border-color: rgba(0, 210, 255, 0.3) !important;
+  color: #00D2FF !important;
+}
+
+.summary-card.resolved svg {
+  background: rgba(16, 185, 129, 0.15) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+  color: #34D399 !important;
+}
+
+.summary-card span,
+.stat-summary-card label {
+  display: block !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  color: #94A3B8 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 4px !important;
+}
+
+.summary-card strong,
+.stat-summary-card strong {
+  display: block !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+}
+
+.stat-summary-card strong {
+  font-size: 26px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.stat-summary-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  color: #2563EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   DEPARTMENTS GRID
+============================================================ */
+
+.departments-grid {
+  max-width: 1500px;
+  margin: 28px auto 0;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 22px;
+  position: relative;
+  z-index: 2;
+}
+
+.department-card {
+  background: rgba(10, 12, 20, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 26px 28px;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.5);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.department-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 20px 55px rgba(37, 99, 235, 0.25);
+}
+
+.department-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 18px;
+}
+
+.department-icon-badge {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  border-radius: 12px !important;
+  background: rgba(37, 99, 235, 0.15) !important;
+  border: 1px solid rgba(37, 99, 235, 0.3) !important;
+  color: #2563EB !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.department-icon-badge svg {
+  color: #2563EB !important;
+}
+
+.department-title h2 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.department-title span {
+  font-size: 12.5px;
+  color: #00D2FF;
+  font-weight: 700;
+}
+
+.department-open-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.department-card:hover .department-open-button {
+  background: #2563EB;
+  border-color: #2563EB;
+  color: #FFFFFF;
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+}
+
+/* STATS GRID INSIDE CARD */
+
+.department-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.department-stats > div {
+  background: rgba(10, 12, 20, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 12px 14px;
+  text-align: center;
+}
+
+.department-stats span {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #94A3B8;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.department-stats strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.critical-stat strong {
+  color: #F87171 !important;
+}
+
+.high-stat strong {
+  color: #FBBF24 !important;
+}
+
+/* RESOLUTION SECTION */
+
+.resolution-section {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.resolution-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 8px !important;
+  font-size: 13px !important;
+}
+
+.resolution-header span {
+  color: #94A3B8 !important;
+  font-weight: 600 !important;
+}
+
+.resolution-header strong {
+  color: #00D2FF !important;
+  font-weight: 800 !important;
+  margin-left: 8px !important;
+}
+
+.resolution-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.resolution-bar > div {
+  height: 100%;
+  background: linear-gradient(90deg, #2563EB, #00D2FF);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+/* DEPARTMENT GOVERNANCE FOOTER */
+
+.department-governance {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding-top: 14px !important;
+  margin-top: 12px !important;
+}
+
+.department-governance > div {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 12.5px !important;
+  color: #94A3B8 !important;
+}
+
+.department-governance span {
+  color: #94A3B8 !important;
+  font-weight: 600 !important;
+}
+
+.department-governance strong {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  margin-left: 4px !important;
+}
+
+/* FOOTER META */
+
+.department-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: #94A3B8;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 14px;
+}
+
+.department-card-footer strong {
+  color: #FFFFFF;
+}

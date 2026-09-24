@@ -1,0 +1,476 @@
+/* =========================================================
+   AI CIVICGUARD - PROFILE PAGE
+   PREMIUM CYBERPUNK DARK GLASS PORTAL UI
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.profile-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 38px 45px 60px;
+  box-sizing: border-box;
+  background: transparent;
+  color: #FFFFFF;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.profile-header {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.profile-header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.5px;
+}
+
+.profile-header p {
+  margin: 6px 0 0;
+  font-size: 15px;
+  color: #94A3B8;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   EDIT & SAVE BUTTONS
+========================================================= */
+
+.edit-profile-button,
+.save-button,
+.security-button {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #FF007A 0%, #E60067 100%);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 18px rgba(230, 0, 103, 0.4);
+}
+
+.edit-profile-button:hover,
+.save-button:hover:not(:disabled),
+.security-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(230, 0, 103, 0.6);
+}
+
+.edit-profile-button:disabled,
+.save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cancel-button {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* =========================================================
+   SUCCESS / ERROR MESSAGE
+========================================================= */
+
+.profile-success-message,
+.profile-inline-error {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  padding: 14px 20px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.profile-success-message {
+  color: #00D2FF;
+  background: rgba(0, 210, 255, 0.12);
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.15);
+}
+
+.profile-inline-error {
+  color: #FF007A;
+  background: rgba(255, 0, 122, 0.12);
+  border: 1px solid rgba(255, 0, 122, 0.3);
+  box-shadow: 0 0 15px rgba(255, 0, 122, 0.15);
+}
+
+/* =========================================================
+   MAIN CONTAINER & SECTIONS
+========================================================= */
+
+.profile-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-overview,
+.profile-section {
+  background: rgba(18, 21, 36, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================================
+   PROFILE OVERVIEW HEADER CARD
+========================================================= */
+
+.profile-overview {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.profile-avatar {
+  width: 84px !important;
+  height: 84px !important;
+  min-width: 84px !important;
+  min-height: 84px !important;
+  max-width: 84px !important;
+  max-height: 84px !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(135deg, #FF007A 0%, #E60067 100%) !important;
+  color: #FFFFFF !important;
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1px;
+  box-shadow: 0 0 25px rgba(255, 0, 122, 0.6) !important;
+  flex-shrink: 0 !important;
+}
+
+.profile-name h2 {
+  margin: 0 0 6px;
+  font-size: 26px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.profile-name p {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: #94A3B8;
+}
+
+.profile-badges {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.profile-tag.verified {
+  background: rgba(0, 210, 255, 0.15);
+  color: #00D2FF;
+  border: 1px solid rgba(0, 210, 255, 0.3);
+}
+
+.profile-tag.unverified {
+  background: rgba(255, 0, 122, 0.15);
+  color: #FF007A;
+  border: 1px solid rgba(255, 0, 122, 0.3);
+}
+
+/* =========================================================
+   FORM GRID & INPUTS
+========================================================= */
+
+.section-header {
+  margin-bottom: 24px;
+}
+
+.section-header h2 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.section-header p {
+  margin: 0;
+  font-size: 14px;
+  color: #94A3B8;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.profile-field.full-width {
+  grid-column: span 2;
+}
+
+.profile-field label {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+
+.profile-field input,
+.profile-field textarea {
+  width: 100%;
+  background: rgba(10, 12, 20, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #FFFFFF !important;
+  font-family: inherit;
+  font-size: 14.5px;
+  line-height: 1.5;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.profile-field input:disabled,
+.profile-field textarea:disabled {
+  background: rgba(10, 12, 20, 0.4);
+  color: #94A3B8 !important;
+  border-color: rgba(255, 255, 255, 0.06);
+  cursor: not-allowed;
+}
+
+.profile-field input:focus:not(:disabled),
+.profile-field textarea:focus:not(:disabled) {
+  outline: none;
+  border-color: #FF007A !important;
+  box-shadow: 0 0 18px rgba(255, 0, 122, 0.35);
+  background: rgba(10, 12, 20, 0.9);
+}
+
+.profile-field small {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #94A3B8;
+}
+
+/* =========================================================
+   ACCOUNT INFORMATION ROWS
+========================================================= */
+
+.account-information {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.account-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  background: rgba(10, 12, 20, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+}
+
+.account-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+.account-row strong {
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  display: block;
+}
+
+.account-status.verified {
+  background: rgba(0, 210, 255, 0.15);
+  color: #00D2FF;
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.account-status.pending {
+  background: rgba(255, 0, 122, 0.15);
+  color: #FF007A;
+  border: 1px solid rgba(255, 0, 122, 0.3);
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* =========================================================
+   SECURITY SECTION
+========================================================= */
+
+.security-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: rgba(10, 12, 20, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+
+  gap: 20px;
+}
+
+.security-row h3 {
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.security-row p {
+  margin: 0;
+  font-size: 13.5px;
+  color: #94A3B8;
+}
+
+/* =========================================================
+   PROFILE ACTIONS (BOTTOM)
+========================================================= */
+
+.profile-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+/* =========================================================
+   PASSWORD MODAL
+========================================================= */
+
+.password-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 12, 20, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.password-modal {
+  background: rgba(18, 21, 36, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 0, 122, 0.3);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 0, 122, 0.25);
+  color: #FFFFFF;
+  overflow: hidden;
+}
+
+.password-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.password-modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.password-modal-close {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.password-modal-close:hover {
+  color: #FFFFFF;
+}
+
+.password-modal-body {
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.password-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px 28px;
+  background: rgba(10, 12, 20, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}

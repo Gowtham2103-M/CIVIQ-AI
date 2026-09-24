@@ -1,0 +1,310 @@
+/* =========================================================
+   AI CIVICGUARD - FIELD WORKER LOGIN
+   PREMIUM CYBERPUNK DARK GLASS PORTAL UI
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.field-worker-login-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: transparent;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
+.field-worker-login-card {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(18, 21, 36, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(255, 0, 122, 0.15);
+  animation: fieldWorkerCardEnter 0.55s ease-out;
+}
+
+@keyframes fieldWorkerCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.field-worker-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.field-worker-logo-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.5);
+  flex-shrink: 0;
+}
+
+.field-worker-logo h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  color: #FFFFFF !important;
+}
+
+.field-worker-logo span {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #00D2FF !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.field-worker-login-heading {
+  margin-bottom: 28px;
+}
+
+.field-worker-login-heading h2 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #FFFFFF !important;
+}
+
+.field-worker-login-heading p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #94A3B8 !important;
+}
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.field-worker-error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  border-radius: 12px;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #EF4444;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   FORM & INPUT GROUPS
+========================================================= */
+
+.field-worker-login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field-worker-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.field-worker-input-group label {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #FFFFFF !important;
+  display: block;
+}
+
+.field-worker-input-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.field-worker-input-wrapper .field-worker-input-icon,
+.field-worker-input-wrapper > svg:first-child {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  pointer-events: none;
+  color: #00D2FF !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.field-worker-input-wrapper input {
+  width: 100%;
+  height: 50px;
+  padding: 0 46px 0 48px !important;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background: rgba(10, 12, 20, 0.75) !important;
+  color: #FFFFFF !important;
+  font-family: inherit;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.field-worker-input-wrapper input::placeholder {
+  color: #64748B !important;
+}
+
+.field-worker-input-wrapper input:focus {
+  outline: none;
+  border-color: #2563EB !important;
+  box-shadow: 0 0 18px rgba(37, 99, 235, 0.4) !important;
+  background: rgba(10, 12, 20, 0.9) !important;
+}
+
+/* Chrome / Edge / Safari Autofill Override */
+.field-worker-input-wrapper input:-webkit-autofill,
+.field-worker-input-wrapper input:-webkit-autofill:hover,
+.field-worker-input-wrapper input:-webkit-autofill:focus,
+.field-worker-input-wrapper input:-webkit-autofill:active {
+  -webkit-text-fill-color: #FFFFFF !important;
+  -webkit-box-shadow: 0 0 0px 1000px #0a0c14 inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.field-worker-password-toggle {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: color 0.2s ease;
+}
+
+.field-worker-password-toggle:hover {
+  color: #FFFFFF;
+}
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.field-worker-login-button,
+.field-worker-submit-btn {
+  width: 100%;
+  height: 52px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+  color: #FFFFFF !important;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5) !important;
+  transition: all 0.25s ease;
+}
+
+.field-worker-login-button:hover:not(:disabled),
+.field-worker-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.7) !important;
+}
+
+.field-worker-login-button:disabled,
+.field-worker-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.field-worker-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   FOOTER / LINKS
+========================================================= */
+
+.field-worker-login-footer {
+  margin-top: 28px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 20px;
+}
+
+.field-worker-login-footer p {
+  margin: 0;
+  font-size: 13.5px;
+  color: #94A3B8;
+  line-height: 1.5;
+}

@@ -1,0 +1,467 @@
+/* =========================================================
+   AI CIVICGUARD - CITIZEN REGISTRATION
+   PREMIUM CYBERPUNK DARK GLASS PORTAL UI
+   STRICT MATCH WITH LOGIN.CSS THEME
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.registration-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 40px 20px;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #FFFFFF;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================================
+   BACKGROUND CIRCLES & CONTAINER
+========================================================= */
+
+.registration-background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.registration-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+}
+
+.circle-one {
+  width: 500px;
+  height: 500px;
+  background: #FF007A;
+  top: -100px;
+  left: -100px;
+}
+
+.circle-two {
+  width: 450px;
+  height: 450px;
+  background: #00D2FF;
+  bottom: -100px;
+  right: -100px;
+}
+
+.registration-container {
+  width: 100%;
+  max-width: 1050px;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  background: rgba(18, 21, 36, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65);
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .registration-container {
+    grid-template-columns: 1fr;
+    max-width: 540px;
+  }
+
+  .registration-info {
+    display: none;
+  }
+}
+
+/* =========================================================
+   LEFT SECTION (BRAND & FEATURES)
+========================================================= */
+
+.registration-info {
+  background: rgba(10, 12, 20, 0.95);
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+.brand-icon {
+  font-size: 22px;
+}
+
+.brand-logo span {
+  font-size: 18px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.3px;
+}
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-label {
+  display: inline-block;
+  color: #00D2FF;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.info-content h1 {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0 0 14px;
+  color: #FFFFFF;
+  letter-spacing: -0.5px;
+}
+
+.info-content h1 span {
+  color: #FF007A;
+}
+
+.info-content p {
+  color: #94A3B8;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.feature-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(0, 210, 255, 0.12);
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  color: #00D2FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.feature-item strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 2px;
+}
+
+.feature-item p {
+  margin: 0;
+  font-size: 13px;
+  color: #94A3B8;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   RIGHT SECTION (FORM CARD)
+========================================================= */
+
+.registration-card {
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(18, 21, 36, 0.85);
+}
+
+.form-header {
+  margin-bottom: 28px;
+}
+
+.form-tag {
+  display: inline-block;
+  color: #FF007A;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.form-header h2 {
+  margin: 0 0 6px;
+  font-size: 24px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.form-header p {
+  margin: 0;
+  font-size: 13.5px;
+  color: #94A3B8;
+}
+
+/* =========================================================
+   FORM INPUTS & LABELS
+========================================================= */
+
+.registration-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-group label .optional {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94A3B8;
+  text-transform: uppercase;
+}
+
+.input-wrapper,
+.textarea-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-icon,
+.textarea-icon {
+  position: absolute;
+  left: 16px;
+  font-size: 15px;
+  color: #94A3B8;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.textarea-icon {
+  top: 16px;
+}
+
+.input-wrapper input,
+.textarea-wrapper textarea {
+  width: 100%;
+  height: 48px;
+  padding: 0 44px 0 44px;
+  background: rgba(10, 12, 20, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  color: #FFFFFF !important;
+  font-family: inherit;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.textarea-wrapper textarea {
+  height: auto;
+  padding: 14px 16px 14px 44px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.input-wrapper input:focus,
+.textarea-wrapper textarea:focus {
+  outline: none;
+  border-color: #FF007A !important;
+  box-shadow: 0 0 18px rgba(255, 0, 122, 0.35);
+  background: rgba(10, 12, 20, 0.9);
+}
+
+/* Autofill dark background override */
+.input-wrapper input:-webkit-autofill,
+.input-wrapper input:-webkit-autofill:hover,
+.input-wrapper input:-webkit-autofill:focus,
+.textarea-wrapper textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #0A0C14 inset !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: #00D2FF;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.password-toggle:hover {
+  background: rgba(0, 210, 255, 0.12);
+}
+
+.password-hint {
+  font-size: 11.5px;
+  color: #94A3B8;
+  margin-top: 2px;
+}
+
+/* =========================================================
+   BUTTONS & MESSAGES
+========================================================= */
+
+.form-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.error-message {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #F87171;
+}
+
+.success-message {
+  background: rgba(0, 210, 255, 0.15);
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  color: #00D2FF;
+}
+
+.register-button {
+  width: 100%;
+  height: 50px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #FF007A 0%, #E60067 100%);
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(230, 0, 103, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.25s ease;
+  margin-top: 6px;
+}
+
+.register-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(230, 0, 103, 0.6);
+}
+
+.register-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.register-button .arrow {
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.register-button:hover:not(:disabled) .arrow {
+  transform: translateX(4px);
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   LOGIN LINK & SECURITY NOTE
+========================================================= */
+
+.login-link {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 14px;
+  color: #94A3B8;
+}
+
+.login-link a {
+  color: #00D2FF;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 6px;
+  transition: color 0.2s ease;
+}
+
+.login-link a:hover {
+  color: #FF007A;
+  text-decoration: underline;
+}
+
+.security-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  color: #94A3B8;
+}

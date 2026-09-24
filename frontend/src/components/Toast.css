@@ -1,0 +1,95 @@
+/* ============================================================
+   AI CIVICGUARD - TOAST NOTIFICATIONS
+   FIELD WORKER THEME (ELECTRIC BLUE & OBSIDIAN GLASS)
+============================================================ */
+
+.officer-toast {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  border-radius: 16px;
+  background: rgba(10, 12, 20, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6);
+  animation: toast-slide-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 420px;
+}
+
+@keyframes toast-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.toast-message {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.4;
+}
+
+.toast-close-btn {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.toast-close-btn:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.toast-icon.success {
+  color: #34D399;
+}
+
+.toast-icon.error {
+  color: #F87171;
+}
+
+.toast-icon.warning {
+  color: #FBBF24;
+}
+
+.toast-icon.info {
+  color: #00D2FF;
+}
+
+.toast-success {
+  border-left: 4px solid #34D399;
+  box-shadow: 0 16px 45px rgba(16, 185, 129, 0.25);
+}
+
+.toast-error {
+  border-left: 4px solid #F87171;
+  box-shadow: 0 16px 45px rgba(239, 68, 68, 0.25);
+}
+
+.toast-warning {
+  border-left: 4px solid #FBBF24;
+  box-shadow: 0 16px 45px rgba(245, 158, 11, 0.25);
+}
+
+.toast-info {
+  border-left: 4px solid #2563EB;
+  box-shadow: 0 16px 45px rgba(37, 99, 235, 0.25);
+}

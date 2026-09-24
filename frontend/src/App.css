@@ -1,0 +1,34 @@
+/* Global App Utilities for Dark Cyberpunk Theme */
+.btn-primary-magenta {
+  background: linear-gradient(135deg, #FF007A 0%, #E60067 100%);
+  color: #FFFFFF !important;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 15px rgba(230, 0, 103, 0.4);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-primary-magenta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 0, 103, 0.6);
+  filter: brightness(1.1);
+}
+
+.card-dark-glass {
+  background: rgba(18, 21, 36, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.cyan-glow {
+  box-shadow: 0 0 12px rgba(0, 210, 255, 0.4);
+}
+
+.magenta-glow {
+  box-shadow: 0 0 15px rgba(230, 0, 103, 0.5);
+}

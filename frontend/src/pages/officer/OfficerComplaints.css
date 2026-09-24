@@ -1,0 +1,625 @@
+/* ============================================================
+   AI CIVICGUARD - OFFICER COMPLAINTS LIST
+   FIELD WORKER THEME (BLUE SILK SHADER + OBSIDIAN GLASS)
+============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+.officer-complaints-layout {
+  min-height: 100vh;
+  width: 100%;
+  background: #0A0C14;
+  color: #FFFFFF;
+  display: flex;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   SILK ANIMATED BACKGROUND LAYER
+============================================================ */
+
+.silk-background-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.officer-complaints-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.officer-complaints-content {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ============================================================
+   PAGE HEADER
+============================================================ */
+
+.oc-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  background: rgba(10, 12, 20, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 28px 32px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.oc-header-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #00D2FF;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.oc-header-label svg {
+  color: #2563EB;
+}
+
+.oc-page-header h1 {
+  margin: 0 0 6px;
+  font-size: 26px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.oc-page-header p {
+  margin: 0;
+  color: #94A3B8;
+  font-size: 13.5px;
+}
+
+.oc-refresh-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: rgba(10, 12, 20, 0.75);
+  backdrop-filter: blur(12px);
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.oc-refresh-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(37, 99, 235, 0.4);
+}
+
+/* ============================================================
+   FILTER PANEL & SEARCH
+============================================================ */
+
+.oc-filter-panel {
+  background: rgba(10, 12, 20, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 24px 28px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.oc-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.oc-search svg {
+  position: absolute;
+  left: 16px;
+  color: #2563EB;
+  pointer-events: none;
+}
+
+.oc-search input {
+  flex: 1;
+  height: 46px;
+  padding: 0 16px 0 46px;
+  background: rgba(18, 21, 36, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  color: #FFFFFF;
+  font-size: 13.5px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.oc-search input:focus {
+  border-color: #2563EB;
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.35);
+}
+
+.oc-search button {
+  height: 46px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+  transition: all 0.25s ease;
+}
+
+.oc-search button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+}
+
+.oc-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.oc-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(18, 21, 36, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 0 14px;
+  height: 44px;
+}
+
+.oc-filter svg {
+  color: #2563EB;
+  flex-shrink: 0;
+}
+
+.oc-filter select {
+  background: transparent;
+  border: none;
+  color: #FFFFFF !important;
+  font-size: 13.5px;
+  outline: none;
+  cursor: pointer;
+  padding-right: 8px;
+}
+
+.oc-filter select option {
+  background: #0A0C14;
+  color: #FFFFFF;
+}
+
+.oc-reset-button {
+  height: 44px;
+  padding: 0 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: rgba(10, 12, 20, 0.7);
+  color: #94A3B8;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.oc-reset-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+/* ============================================================
+   RESULTS COUNT & PAGINATION META
+============================================================ */
+
+.oc-results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13.5px;
+  color: #94A3B8;
+  padding: 0 4px;
+}
+
+.oc-results-header span {
+  font-weight: 800;
+  color: #00D2FF;
+  margin-right: 6px;
+}
+
+/* ============================================================
+   COMPLAINTS TABLE & CARDS
+============================================================ */
+
+.oc-complaints-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.oc-table-wrapper {
+  background: rgba(10, 12, 20, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow-x: auto;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5);
+}
+
+.oc-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13.5px;
+}
+
+.oc-table th {
+  background: rgba(10, 12, 20, 0.95);
+  padding: 16px 20px;
+  color: #00D2FF;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.oc-table td {
+  padding: 16px 20px;
+  color: #CBD5E1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  vertical-align: middle;
+}
+
+.oc-table tr:last-child td {
+  border-bottom: none;
+}
+
+.oc-table tr:hover td {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.oc-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 220px;
+  background: rgba(10, 12, 20, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  color: #94A3B8;
+  font-size: 14px;
+}
+
+.oc-loading svg {
+  color: #00D2FF;
+  animation: spin 1s linear infinite;
+}
+
+.oc-category,
+.oc-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #CBD5E1;
+  font-size: 13px;
+}
+
+.oc-date svg,
+.oc-location svg {
+  width: 14px;
+  height: 14px;
+  color: #2563EB;
+}
+
+.oc-risk {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 110px;
+}
+
+.oc-risk strong {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.oc-risk-bar {
+  width: 100%;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.oc-risk-bar div {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #22c55e 0%, #f59e0b 55%, #ef4444 100%);
+}
+
+.risk-safe {
+  color: #34d399;
+}
+
+.risk-warning {
+  color: #fbbf24;
+}
+
+.risk-danger {
+  color: #f87171;
+}
+
+.oc-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.oc-status-assigned {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  color: #fbbf24;
+}
+
+.oc-status-accepted {
+  background: rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  color: #60a5fa;
+}
+
+.oc-status-progress {
+  background: rgba(14, 165, 233, 0.15);
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  color: #67e8f9;
+}
+
+.oc-status-submitted {
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  color: #d8b4fe;
+}
+
+.oc-status-resolved {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: #4ade80;
+}
+
+.oc-status-rejected {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+}
+
+.oc-status-default {
+  background: rgba(148, 163, 184, 0.15);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  color: #cbd5e1;
+}
+
+.oc-view-button,
+.oc-view-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(37, 99, 235, 0.4);
+  background: rgba(37, 99, 235, 0.15);
+  color: #38bdf8;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.oc-view-button:hover,
+.oc-view-btn:hover {
+  background: #2563EB;
+  color: #FFFFFF;
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+}
+
+.oc-complaint-image {
+  display: block;
+  width: 74px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.8);
+}
+
+/* COMPLAINT ID & CELL STYLES */
+
+.oc-complaint-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.oc-complaint-id {
+  font-family: monospace;
+  color: #00D2FF;
+  font-weight: 800;
+  font-size: 12.5px;
+  background: rgba(0, 210, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 210, 255, 0.25);
+  flex-shrink: 0;
+}
+
+.oc-complaint-cell strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.oc-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #94A3B8;
+  font-size: 13px;
+}
+
+.oc-location svg {
+  color: #2563EB;
+  flex-shrink: 0;
+}
+
+/* PRIORITY BADGES */
+
+.oc-priority {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.oc-priority-critical {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #F87171;
+}
+
+.oc-priority-high {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #FBBF24;
+}
+
+.oc-priority-medium {
+  background: rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  color: #2563EB;
+}
+
+.oc-priority-normal {
+  background: rgba(148, 163, 184, 0.15);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  color: #94A3B8;
+}
+
+/* ACTION BUTTON */
+
+.oc-view-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(37, 99, 235, 0.4);
+  background: rgba(37, 99, 235, 0.15);
+  color: #2563EB;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.oc-view-btn:hover {
+  background: #2563EB;
+  color: #FFFFFF;
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+}
+
+/* EMPTY & LOADING STATES */
+
+.oc-empty {
+  background: rgba(10, 12, 20, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 60px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.oc-empty svg {
+  color: #2563EB;
+}
+
+.oc-empty h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.oc-empty p {
+  margin: 0;
+  color: #94A3B8;
+  font-size: 13.5px;
+}
+
+.oc-empty button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}

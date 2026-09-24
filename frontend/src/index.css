@@ -1,0 +1,46 @@
+:root {
+  --bg-main: #0A0C14;
+  --bg-card: #121524;
+  --bg-card-hover: #181C30;
+  --primary-magenta: #E60067;
+  --primary-pink-gradient: linear-gradient(135deg, #FF007A 0%, #E60067 100%);
+  --secondary-cyan: #00D2FF;
+  --text-main: #FFFFFF;
+  --text-muted: #94A3B8;
+  --border-dark: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(255, 255, 255, 0.15);
+  --glass-bg: rgba(18, 21, 36, 0.75);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Sleek Dark Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0C14;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E243A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E60067;
+}
